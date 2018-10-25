@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <title>Web Speech API</title>
 <script>
-window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
+//window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
+SpeechRecognition = SpeechRecognition || webkitSpeechRecognition || null;
 var recognition = new webkitSpeechRecognition();
 recognition.lang = 'ja';
  
