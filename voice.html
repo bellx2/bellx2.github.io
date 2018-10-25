@@ -5,8 +5,9 @@
 <title>Web Speech API</title>
 <script>
 //window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
+//var recognition = new webkitSpeechRecognition();
 SpeechRecognition = SpeechRecognition || webkitSpeechRecognition || null;
-var recognition = new webkitSpeechRecognition();
+var recognition = new SpeechRecognition;
 recognition.lang = 'ja';
  
 recognition.onresult = function(event){
