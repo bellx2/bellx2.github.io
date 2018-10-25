@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+	<title>Web Speech API Test</title>
+</head>
+<body>
+	<script>
+		var recognition = new webkitSpeechRecognition();
+		recognition.onresult = function(event) {
+			console.log(event);
+		}
+	</script>
+	<form>
+		<input type="button" value="Talk!" onclick="recognition.start()" />
+	</form>
+</body>
+</html>
