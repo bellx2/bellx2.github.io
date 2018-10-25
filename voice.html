@@ -5,11 +5,7 @@
 <title>Web Speech API</title>
 <script>
 
-navigator.getUserMedia({
-   audio: true
-}, _handleSuccess, _handleError); 
- 
-window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
+   window.SpeechRecognition = window.SpeechRecognition || webkitSpeechRecognition;
 var recognition = new webkitSpeechRecognition();
 recognition.lang = 'ja';
  
@@ -21,7 +17,7 @@ recognition.onresult = function(event){
 </script> 
 </head>
 <body>
-<textarea id="result_text" cols="100" rows="10">
+<textarea id="result_text" cols="100" rows="10" x-webkit-speech>
 </textarea>
 <br>
 <input type="button" onClick="recognition.start();" value="音認開始">
