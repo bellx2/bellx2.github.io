@@ -1,0 +1,27 @@
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.js"></script>
+
+<div id="app">
+  <input v-model="mytime">
+  <p>
+  <p>FromNow : {{ time_diff() }}
+  <p>Diff(sec) : {{ time_diff_sec() }}
+</div>
+
+<script>
+var app = new Vue({
+  el: '#app',
+  data: {
+    mytime: moment().format("YYYY/MM/DD HH:mm:ss"),
+  },
+  methods: {
+    time_diff: function(){
+      moment.locale('ja')
+      return moment(this.mytime).fromNow()
+    },
+    time_diff_sec: function(){
+      return moment(this.mytime).diff(moment(),'seconds')
+    } 
+  }
+})
+</script>
